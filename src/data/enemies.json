@@ -1,0 +1,22 @@
+[
+    {
+        "name": "slime",
+        "health": 60
+    },
+    {
+        "name": "treant",
+        "health": 90
+    },
+    {
+        "name": "goblin",
+        "health": 70
+    },
+    {
+        "name": "hat",
+        "health": 30
+    },
+    {
+        "name": "broom",
+        "health": 45
+    }
+]

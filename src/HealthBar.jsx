@@ -1,37 +1,13 @@
 import { useState, useEffect } from "react";
+import enemies from "./data/enemies"
 
-const HealthBar = ({ health, setHealth, damage }) => {
-
-    const handleClick = () => {
-        setHealth(100)
-    }
-
-    useEffect(() => {
-
-        const handlePress = (e) => {
-            const target = e.target.id;
-
-            if (target === "enemy") {
-                (health > damage ? setHealth(health - damage) : setHealth(0))
-            } return null
-
-        }
-
-        window.addEventListener("click", handlePress)
-
-        return () => {
-            window.removeEventListener("click", handlePress)
-        }
-
-    })
-
+const HealthBar = ({ health }) => {
 
     return (
         <>
             <div className="health">
                 <p className="health-text">{health}</p>
             </div>
-            <button onClick={() => handleClick()}>Reset</button>
         </>
     );
 }
