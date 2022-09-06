@@ -1,16 +1,12 @@
 import { useState } from "react";
 
-const Enemy = ({ enemies }) => {
-
-    const [enemy, setEnemy] = useState(0)
-
-
-   
+const Enemy = ({ enemies, activeEnemy }) => {
 
     return (
         <>
-            <div className="enemy" id="enemy" />
-            {/* <button onClick={() => activeEnemy()}>Random</button> */}
+            <h1>{enemies[activeEnemy].name}</h1>
+            <div className={`enemy ${enemies[activeEnemy].name}`} id="enemy"></div>
+            {/* <button onClick={() => activeactiveEnemy()}>Random</button> */}
         </>
     );
 }
