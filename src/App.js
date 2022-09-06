@@ -23,9 +23,9 @@ function App() {
 
     const handlePress = (e) => {
       const target = e.target.id;
-      if (target === "activeEnemy" && health > damage) {
+      if (target === "enemy" && health > damage) {
         setHealth(health - damage)
-      } else {
+      } else if (target === "enemy" && health < damage) {
         setactiveEnemy(Math.floor(Math.random() * (max - min) + min))
         setHealth(enemies[activeEnemy].health)
       }
