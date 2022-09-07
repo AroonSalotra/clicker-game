@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --clr-a: rgb(218, 210, 210);
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -31,12 +35,18 @@ body {
   display: flex;
   justify-content: center;
   /* border: 3px solid black; */
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 .gold {
-  font-size: 2rem;
-  color: rgb(211, 176, 81);
+  font-size: 2.5rem;
+  position: absolute;
+  /* transform: translateX(11rem); */
+  transform: translate(11rem, -0.5rem);
+  background: rgb(211, 176, 81);
+  border-radius: 100px;
+  padding: 5px;
+  min-width: 4rem;
 }
 
 .health-text {
@@ -44,33 +54,63 @@ body {
   font-weight: 700;
 }
 
+.wrapper-shop {
+  position: absolute;
+  top: 0;
+  transform: translate(2rem, 8rem);
+  /* text-align: left; */
+}
+
+.shop-grid {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.shop-icon {
+  width: 5rem;
+  /* height: 2rem; */
+  /* border: 2px solid maroon; */
+  border-radius: 10px;
+  /* background: var(--clr-a); */
+}
+
+.shop-icon, button {
+  /* border: none; */
+}
+
 .enemy {
   margin: auto;
   height: 20rem;
   width: 30rem;
   background: rgb(18, 95, 43);
-  border-radius: 100px;
+  /* border-radius: 100px; */
   /* transition: background-color 100ms ease-out; */
 }
 
 .slime {
-  background: green;
+  background: hsla(120, 100%, 25%, 0.5);
+  border: 5px solid hsl(120, 100%, 25%);
 }
 
 .treant {
-  background: brown;
+  background: hsla(0, 59%, 41%, 0.5);
+  border: 5px solid hsla(0, 59%, 41%);
 }
 
 .goblin {
-  background: red;
+  background: hsla(0, 100%, 50%, 0.507);
+  border: 5px solid hsla(0, 100%, 50%);
 }
 
-.hat{
-  background: rgb(51, 49, 49);
-} 
+.hat {
+  background: hsla(0, 2%, 20%, 0.418);
+  border: 5px solid hsla(0, 2%, 20%, 0.418);
+}
 
-.broom{
-  background: yellow;
+.broom {
+  background: hsla(60, 100%, 50%, 0.507);
+  border: 5px solid hsla(60, 100%, 50%);
 }
 
 .enemy:active {

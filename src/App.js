@@ -6,17 +6,19 @@ import { useState, useEffect } from 'react';
 import enemies from "./data/enemies"
 import Gold from './Gold';
 import Tracker from './Tracker';
+import Shop from './Shop';
 
 function App() {
 
   const [damage, setDamage] = useState(7)
   const [activeEnemy, setActiveEnemy] = useState(0)
   const [enemyHealth, setEnemyHealth] = useState(enemies[activeEnemy].health)
-  const [gold, setGold] = useState(0)
+  const [gold, setGold] = useState(500)
 
 
   const handleClick = () => {
-    setEnemyHealth(7)
+    setEnemyHealth(enemies[activeEnemy].health)
+    setGold(0)
   }
 
   // Attack function
@@ -58,6 +60,7 @@ function App() {
       <Gold gold={gold} /> */}
       <Enemy enemies={enemies} activeEnemy={activeEnemy} />
       <button onClick={() => handleClick()}>Reset</button>
+      <Shop gold={gold} setGold={setGold} />
 
     </div>
   );
