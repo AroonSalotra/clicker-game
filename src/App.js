@@ -4,16 +4,19 @@ import HealthBar from './HealthBar';
 import Enemy from './Enemy';
 import { useState, useEffect } from 'react';
 import enemies from "./data/enemies"
+import Gold from './Gold';
+import Tracker from './Tracker';
 
 function App() {
 
   const [damage, setDamage] = useState(7)
-  const [activeEnemy, setactiveEnemy] = useState(0)
-  const [health, setHealth] = useState(enemies[activeEnemy].health)
+  const [activeEnemy, setActiveEnemy] = useState(0)
+  const [enemyHealth, setEnemyHealth] = useState(enemies[activeEnemy].health)
+  const [gold, setGold] = useState(0)
 
 
   const handleClick = () => {
-    setHealth(7)
+    setEnemyHealth(7)
   }
 
   // Attack function
@@ -23,11 +26,14 @@ function App() {
 
     const handlePress = (e) => {
       const target = e.target.id;
-      if (target === "enemy" && health >= damage) {
-        setHealth(health - damage)
-      } else if (target === "enemy" && health <= damage) {
-        setactiveEnemy(Math.floor(Math.random() * (max - min) + min))
-        setHealth(enemies[activeEnemy].health)
+      const { health } = enemies[activeEnemy]
+
+      if (target === "enemy" && enemyHealth >= damage) {
+        setEnemyHealth(enemyHealth - damage)
+      } else if (target === "enemy" && enemyHealth <= damage) {
+        setActiveEnemy(Math.floor(Math.random() * (max - min) + min))
+        setEnemyHealth(health)
+        setGold(gold + Math.round(health / 10))
       }
     }
 
@@ -40,10 +46,16 @@ function App() {
 
   return (
     <div className="App">
-      <HealthBar
-        health={health} setHealth={setHealth}
+      <Tracker
+        health={enemyHealth} setHealth={setEnemyHealth}
+        damage={damage} setDamage={setDamage}
+        gold={gold}
+      />
+      {/* <HealthBar
+        health={enemyHealth} setHealth={setEnemyHealth}
         damage={damage} setDamage={setDamage}
       />
+      <Gold gold={gold} /> */}
       <Enemy enemies={enemies} activeEnemy={activeEnemy} />
       <button onClick={() => handleClick()}>Reset</button>
 
