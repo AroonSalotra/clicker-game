@@ -16,6 +16,7 @@ const Shop = ({ gold, setGold, damage, setDamage, goldModifier, setGoldModifier 
     return (
         <div className="wrapper-shop">
             <h2>SHOP</h2>
+            <p className="gold">{gold} gold</p>
             <div className="shop-grid">
                 <ShopIcon text={"DAM+"}
                     modifier={damageModifier} setModifier={setDamageModifier}

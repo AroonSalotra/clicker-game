@@ -1,14 +1,24 @@
-const Debug = ({ enemies, setEnemyHealth, setGold, activeEnemy }) => {
+const Debug = ({ enemies, setEnemyHealth, setGold, activeEnemy, gold }) => {
 
-    const handleClick = () => {
+    const resetGold = () => {
         setEnemyHealth(enemies[activeEnemy].health)
         setGold(0)
     }
 
+    const giveGold = () => {
+        setGold(gold + 100)
+    }
+
     return (
-        <>
-            <button onClick={() => handleClick()}>Reset Gold</button>
-        </>
+        <div className="debug">
+            <button onClick={() => resetGold()}
+                className="debug-btn">
+                Reset Gold</button>
+                
+            <button onClick={() => giveGold()}
+                className="debug-btn">
+                Give Gold</button>
+        </div>
     );
 }
 

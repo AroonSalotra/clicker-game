@@ -1,38 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ShopIcon = (props) => {
     // const [counter, setCounter] = useState(1)
+    const [display, setDisplay] = useState(null)
+    const [price, setPrice] = useState(50)
 
-    const buyItem = (cost) => {
-        if (props.gold >= cost) {
+    const buyItem = () => {
+        if (props.gold >= price) {
             props.setModifier(props.modifier + 1)
-            props.setGold(props.gold - cost)
+            props.setGold(props.gold - price)
+            setPrice(Math.round(price + price / 1.5))
         }
     }
 
-    const handleClick = () => {
-        switch (props.modifier) {
-            case 1:
-                buyItem(49)
-                break;
-            case 2:
-                buyItem(99)
-                break;
-            case 3:
-                buyItem(149)
-                break;
-            case 4:
-                buyItem(199)
-                break;
-            default:
-                return null
-        }
-    }
+    console.log(price)
 
     return (
         <div className="shop-icon">
-            <button onClick={() => handleClick()}>{props.text}</button>
-            <p>{props.modifier > 4 ? "Max" : `Level ${props.modifier}`}</p>
+            <button onClick={() => buyItem()} className={`shop-btn ${display}`}>
+                {props.text}</button>
+            <p className="price">{price}g</p>
+            {/* <p className="shop-text">{props.modifier > 4 ? "Max" : `Lv. ${props.modifier}`}</p> */}
+            <p className="shop-text">{`Lv. ${props.modifier}`}</p>
         </div>
     );
 }

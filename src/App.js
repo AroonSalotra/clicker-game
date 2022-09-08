@@ -16,7 +16,7 @@ function App() {
   const [activeEnemy, setActiveEnemy] = useState(0)
   const [enemyHealth, setEnemyHealth] = useState(enemies[activeEnemy].health)
   const [gold, setGold] = useState(0)
-  const [goldModifier, setGoldModifier] = useState(null)
+  const [goldModifier, setGoldModifier] = useState(0.2)
   const [experience, setExperience] = useState(0)
 
 
@@ -55,7 +55,8 @@ function App() {
   })
 
   return (
-    <div className="App">
+    <>
+      {/* <div className="App"> */}
       <Tracker
         health={enemyHealth} setHealth={setEnemyHealth}
         damage={damage} setDamage={setDamage}
@@ -63,18 +64,18 @@ function App() {
       />
       <Enemy enemies={enemies} activeEnemy={activeEnemy}
       />
-      <Shop gold={gold} setGold={setGold}
-        damage={damage} setDamage={setDamage}
-      />
-      <Debug enemies={enemies} activeEnemy={activeEnemy}
-        setGold={setGold} setEnemyHealth={setEnemyHealth}
-      />
       <Experience
         goldModifier={goldModifier} setGoldModifier={setGoldModifier}
         experience={experience} setExperience={setExperience}
-
       />
-    </div>
+      <Shop gold={gold} setGold={setGold}
+        damage={damage} setDamage={setDamage}
+      />
+      {/* </div> */}
+      <Debug enemies={enemies} activeEnemy={activeEnemy} gold={gold}
+        setGold={setGold} setEnemyHealth={setEnemyHealth}
+      />
+    </>
   );
 }
 
