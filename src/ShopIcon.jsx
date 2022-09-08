@@ -24,9 +24,6 @@ const ShopIcon = (props) => {
             case 4:
                 buyItem(199)
                 break;
-            case 5:
-                buyItem(299)
-                break;
             default:
                 return null
         }

@@ -32,6 +32,14 @@ body {
   border: 3px solid rgb(114, 15, 15);
 }
 
+.level {
+  background: rgb(218, 210, 210);
+  font-size: 1.5rem;
+  max-width: 30rem;
+  margin: 1rem auto;
+}
+
+
 .tracker {
   display: flex;
   justify-content: center;
@@ -89,10 +97,22 @@ body {
 .enemy {
   margin: auto;
   height: 20rem;
-  width: 30rem;
+  max-width: 30rem;
   background: rgb(18, 95, 43);
   /* border-radius: 100px; */
   /* transition: background-color 100ms ease-out; */
+}
+
+.wrapper-bar {
+  width: 40%;
+  margin: auto;
+  /* border: 3px solid red; */
+}
+
+.bar-content {
+  background: blue;
+  margin: auto;
+  transition: all 1s ease;
 }
 
 .slime {
