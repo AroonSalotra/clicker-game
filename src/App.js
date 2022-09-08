@@ -13,7 +13,7 @@ function App() {
   const [damage, setDamage] = useState(7)
   const [activeEnemy, setActiveEnemy] = useState(0)
   const [enemyHealth, setEnemyHealth] = useState(enemies[activeEnemy].health)
-  const [gold, setGold] = useState(500)
+  const [gold, setGold] = useState(5000)
 
 
   const handleClick = () => {
@@ -59,9 +59,10 @@ function App() {
       />
       <Gold gold={gold} /> */}
       <Enemy enemies={enemies} activeEnemy={activeEnemy} />
+      <Shop gold={gold} setGold={setGold}
+        damage={damage} setDamage={setDamage}
+      />
       <button onClick={() => handleClick()}>Reset</button>
-      <Shop gold={gold} setGold={setGold} />
-
     </div>
   );
 }

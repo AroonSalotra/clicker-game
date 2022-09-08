@@ -1,19 +1,17 @@
 import { useState } from "react";
 
 const ShopIcon = (props) => {
-    const [counter, setCounter] = useState(1)
+    // const [counter, setCounter] = useState(1)
 
     const buyItem = (cost) => {
-        //   (props.gold <= cost ?  :)
         if (props.gold >= cost) {
-            setCounter(counter + 1)
+            props.setModifier(props.modifier + 1)
             props.setGold(props.gold - cost)
         }
     }
 
     const handleClick = () => {
-        // return (counter < 10 ? setCounter(counter + 1) : null)
-        switch (counter) {
+        switch (props.modifier) {
             case 1:
                 buyItem(49)
                 break;
@@ -29,7 +27,6 @@ const ShopIcon = (props) => {
             case 5:
                 buyItem(299)
                 break;
-
             default:
                 return null
         }
@@ -37,9 +34,8 @@ const ShopIcon = (props) => {
 
     return (
         <div className="shop-icon">
-            {/* {props.text} */}
             <button onClick={() => handleClick()}>{props.text}</button>
-            <p>{counter > 9 ? "max" : "level"} {counter}</p>
+            <p>{props.modifier > 4 ? "Max" : `Level ${props.modifier}`}</p>
         </div>
     );
 }

@@ -19,7 +19,8 @@ body {
 
 .App {
   text-align: center;
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
+  padding: 2rem;
 }
 
 .health {
@@ -55,20 +56,25 @@ body {
 }
 
 .wrapper-shop {
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  transform: translate(2rem, 8rem);
-  /* text-align: left; */
+  transform: translate(2rem, 8rem); */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  padding-top: 2rem;
 }
 
 .shop-grid {
-  display: flex;
+  /* display: flex;
   gap: 1rem;
-  padding-top: 1rem;
+  padding-top: 1rem; */
+  display: flex;
+  justify-content: center;
 }
 
 .shop-icon {
-  width: 5rem;
+  /* width: 5rem; */
   /* height: 2rem; */
   /* border: 2px solid maroon; */
   border-radius: 10px;
@@ -77,6 +83,7 @@ body {
 
 .shop-icon, button {
   /* border: none; */
+  width: 4rem;
 }
 
 .enemy {
