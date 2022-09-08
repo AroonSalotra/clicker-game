@@ -12,6 +12,7 @@ const Experience = ({ enemies, goldModifier, setGoldModifier, experience, setExp
         if (experience > 99) {
             setLevel(level + 1)
             setExperience(0)
+            setGoldModifier(level / 2.5)
         }
     }, [experience])
 

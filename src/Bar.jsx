@@ -3,13 +3,13 @@ import { useState } from "react";
 const Bar = (props) => {
     const { bgcolor, completed } = props;
 
-    const contentStyle = {
+    const barDisplay = {
         width: `${completed}%`,
     }
 
     return (
         <div className="wrapper-bar">
-            <div style={contentStyle} className={"bar-content"}>
+            <div style={barDisplay} className={"bar-content"}>
                 <span>{`${completed}%`}</span>
             </div>
         </div>

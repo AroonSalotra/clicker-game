@@ -17,7 +17,7 @@ function App() {
   const [enemyHealth, setEnemyHealth] = useState(enemies[activeEnemy].health)
   const [gold, setGold] = useState(0)
   const [goldModifier, setGoldModifier] = useState(1)
-  const [experience, setExperience] = useState(99)
+  const [experience, setExperience] = useState(0)
 
 
   // const handleClick = () => {
@@ -40,7 +40,7 @@ function App() {
         setActiveEnemy(Math.floor(Math.random() * (max - min) + min))
         setEnemyHealth(health)
         // setGold(gold + Math.round(health / 10))
-        setGold(gold + (Math.round(health / 10)) * goldModifier)
+        setGold(gold + (Math.round((health / 10) * goldModifier)))
         setExperience(experience + health / 2)
       }
     }
@@ -59,7 +59,7 @@ function App() {
       <Tracker
         health={enemyHealth} setHealth={setEnemyHealth}
         damage={damage} setDamage={setDamage}
-        gold={gold}
+        gold={gold} goldModifier={goldModifier}
       />
       <Enemy enemies={enemies} activeEnemy={activeEnemy}
       />

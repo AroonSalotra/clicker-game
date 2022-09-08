@@ -47,15 +47,19 @@ body {
   /* gap: 2rem; */
 }
 
+.wrapper-gold {}
+
 .gold {
-  font-size: 2.5rem;
-  position: absolute;
-  /* transform: translateX(11rem); */
-  transform: translate(11rem, -0.5rem);
-  background: rgb(211, 176, 81);
-  border-radius: 100px;
-  padding: 5px;
-  min-width: 4rem;
+  font-size: 3rem;
+  background: yellow;
+  border-radius: 50px;
+  width: 4rem;
+  padding: 1px;
+}
+
+.gold-modifier {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .health-text {
