@@ -16,7 +16,7 @@ function App() {
   const [activeEnemy, setActiveEnemy] = useState(0)
   const [enemyHealth, setEnemyHealth] = useState(enemies[activeEnemy].health)
   const [gold, setGold] = useState(0)
-  const [goldModifier, setGoldModifier] = useState(1)
+  const [goldModifier, setGoldModifier] = useState(null)
   const [experience, setExperience] = useState(0)
 
 

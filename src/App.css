@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Silkscreen");
+
 *, *::after, *::before {
   padding: 0;
   margin: 0;
@@ -12,6 +14,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-family: Silkscreen;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: gray;
@@ -33,9 +36,9 @@ body {
 }
 
 .level {
-  background: rgb(218, 210, 210);
+  /* background: rgb(218, 210, 210); */
   font-size: 1.5rem;
-  max-width: 30rem;
+  /* max-width: 30rem; */
   margin: 1rem auto;
 }
 
@@ -98,14 +101,6 @@ body {
   width: 4rem;
 }
 
-.enemy {
-  margin: auto;
-  height: 20rem;
-  max-width: 30rem;
-  background: rgb(18, 95, 43);
-  /* border-radius: 100px; */
-  /* transition: background-color 100ms ease-out; */
-}
 
 .wrapper-bar {
   width: 40%;
@@ -119,33 +114,49 @@ body {
   transition: all 1s ease;
 }
 
+.enemy {
+  /* margin: auto;
+  height: 20rem;
+  max-width: 30rem;
+  background: rgb(18, 95, 43); */
+  font-size: 5rem;
+  user-select: none;
+  cursor: pointer;
+}
+
 .slime {
-  background: hsla(120, 100%, 25%, 0.5);
-  border: 5px solid hsl(120, 100%, 25%);
+  /* background: hsla(120, 100%, 25%, 0.5); */
+  color: hsla(120, 100%, 25%, 0.5);
+  /* border: 5px solid hsl(120, 100%, 25%); */
 }
 
 .treant {
-  background: hsla(0, 59%, 41%, 0.5);
-  border: 5px solid hsla(0, 59%, 41%);
+  /* background: hsla(0, 59%, 41%, 0.5); */
+  color: hsla(0, 59%, 41%, 0.5);
+  /* border: 5px solid hsla(0, 59%, 41%); */
 }
 
 .goblin {
-  background: hsla(0, 100%, 50%, 0.507);
-  border: 5px solid hsla(0, 100%, 50%);
+  /* background: hsla(0, 100%, 50%, 0.507); */
+  color: hsla(0, 100%, 50%, 0.507);
+  /* border: 5px solid hsla(0, 100%, 50%); */
 }
 
 .hat {
-  background: hsla(0, 2%, 20%, 0.418);
-  border: 5px solid hsla(0, 2%, 20%, 0.418);
+  /* background: hsla(0, 2%, 20%, 0.418); */
+  color: hsla(0, 2%, 20%, 0.418);
+  /* border: 5px solid hsla(0, 2%, 20%, 0.418); */
 }
 
 .broom {
-  background: hsla(60, 100%, 50%, 0.507);
-  border: 5px solid hsla(60, 100%, 50%);
+  /* background: hsla(60, 100%, 50%, 0.507); */
+  color: hsla(60, 100%, 50%, 0.507);
+  /* border: 5px solid hsla(60, 100%, 50%); */
 }
 
 .enemy:active {
   /* background: rgb(138, 26, 26);
   transition: background-color 100ms ease; */
-  width: 28rem;
+  /* width: 28rem; */
+  font-size: 5.2rem;
 }
