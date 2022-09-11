@@ -19,13 +19,12 @@ function App() {
   const [goldModifier, setGoldModifier] = useState(0.2)
   const [experience, setExperience] = useState(0)
   const [kills, setKills] = useState(0)
-
+  const [healthModifier, setHealthModifier] = useState(0)
 
   // Attack function
   useEffect(() => {
     const min = Math.ceil(0);
     const max = Math.floor(enemies.length);
-    let healthModifier = 0;
 
     const handlePress = (e) => {
       const target = e.target.id;
@@ -36,34 +35,24 @@ function App() {
       } else if (target === "enemy" && enemyHealth <= damage) {
         setActiveEnemy(Math.floor(Math.random() * (max - min) + min))
         setKills(kills + 1)
-        setEnemyHealth(health + healthModifier)
+        setEnemyHealth(health + kills)
         setGold(gold + (Math.round((health / 10) * goldModifier)))
         setExperience(experience + health / 2)
+        console.log(`HP: ${healthModifier}`)
       }
-    }
-
-
-    if (kills > 0 && kills % 10 === 0) {
-      console.log("YES")
-      healthModifier += kills
     }
 
     window.addEventListener("click", handlePress)
 
     return () => window.removeEventListener("click", handlePress)
+
   })
 
-  // useEffect(() => {
-  //   let int = 0;
-  //   console.log("true")
-  //   int += 10;
+  useEffect(() => {
+    if (kills > 9) {
+    }
 
-  //   if (int > 9) {
-  //     console.log("YES")
-
-  //     int = 0;
-  //   }
-  // }, [kills > 9])
+  }, [kills])
 
   return (
     <>
