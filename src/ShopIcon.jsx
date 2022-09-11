@@ -4,12 +4,14 @@ const ShopIcon = (props) => {
     // const [counter, setCounter] = useState(1)
     const [display, setDisplay] = useState(null)
     const [price, setPrice] = useState(50)
+    const [level, setLevel] = useState(1)
 
     const buyItem = () => {
         if (props.gold >= price) {
             props.setModifier(props.modifier + props.increment)
             props.setGold(props.gold - price)
             setPrice(Math.round(price + price / 1.5))
+            setLevel(level + 1)
         }
     }
 
@@ -20,8 +22,7 @@ const ShopIcon = (props) => {
             <button onClick={() => buyItem()} className={`shop-btn ${display}`}>
                 {props.text}</button>
             <p className="price">{price}g</p>
-            {/* <p className="shop-text">{props.modifier > 4 ? "Max" : `Lv. ${props.modifier}`}</p> */}
-            <p className="shop-text">{`Lv. ${props.modifier}`}</p>
+            <p className="shop-text">{`Lv. ${level}`}</p>
         </div>
     );
 }
