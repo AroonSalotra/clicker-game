@@ -1,10 +1,11 @@
 const Tracker = ({ gold, health, goldModifier }) => {
+
     return (
         <>
             <h2>Health</h2>
             <div className="tracker">
                 <div className="health">
-                    <p className="health-text">{health}</p>
+                    <p className="health-text">{health.toFixed()}</p>
                 </div>
                 <div className="wrapper-gold">
                     {/* <p className="gold">{gold}</p> */}

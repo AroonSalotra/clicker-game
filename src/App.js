@@ -20,6 +20,7 @@ function App() {
   const [experience, setExperience] = useState(0)
 
 
+
   // const handleClick = () => {
   //   setEnemyHealth(enemies[activeEnemy].health)
   //   setGold(0)

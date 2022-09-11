@@ -23,6 +23,7 @@ const Experience = ({ enemies, goldModifier, setGoldModifier, experience, setExp
         <>
             <p className="level">Level: {level}</p>
             <Bar completed={expPercent} />
+            <p>{experience} / {expCap}</p>
         </>
     );
 }

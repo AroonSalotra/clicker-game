@@ -7,7 +7,7 @@ const ShopIcon = (props) => {
 
     const buyItem = () => {
         if (props.gold >= price) {
-            props.setModifier(props.modifier + 1)
+            props.setModifier(props.modifier + props.increment)
             props.setGold(props.gold - price)
             setPrice(Math.round(price + price / 1.5))
         }

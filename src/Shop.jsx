@@ -20,7 +20,7 @@ const Shop = ({ gold, setGold, damage, setDamage, goldModifier, setGoldModifier 
             <div className="shop-grid">
                 <ShopIcon text={"DAM+"}
                     modifier={damageModifier} setModifier={setDamageModifier}
-                    gold={gold} setGold={setGold} />
+                    increment={0.3} gold={gold} setGold={setGold} />
 
                 {/* <ShopIcon text={"GOLD+"}
                     modifier={goldModifier} setModifier={setGoldModifier}
