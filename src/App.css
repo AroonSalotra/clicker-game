@@ -24,6 +24,22 @@ body {
 
 }
 
+.header {
+  background: rgb(142, 189, 165);
+}
+
+.header-text {
+  /* transform: translateY(1rem); */
+  animation: titleMove 2000ms infinite;
+  /* animation-iteration-count: infinite; */
+}
+
+@keyframes titleMove {
+  0% {transform: translateY(0rem);}
+  50% {transform: translateY(0.2rem);}
+  100% {transform: translateY(0rem);}
+}
+
 .App {
   /* text-align: center;
   padding: 2rem; */
@@ -90,17 +106,8 @@ body {
 }
 
 .wrapper-shop {
-  /* position: absolute;
-  top: 0;
-  transform: translate(2rem, 8rem); */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  background: rgb(146, 141, 141);
-  /* width: fit-content; */
-  /* width: 20rem; */
+  background: rgb(133, 143, 170);
   margin: 2rem auto;
-
 }
 
 .wrapper-gold {}

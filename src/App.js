@@ -9,6 +9,7 @@ import Tracker from './Tracker';
 import Shop from './Shop';
 import Debug from './Debug';
 import Experience from './Experience';
+import Header from './Header';
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <div className="App">
         <Tracker
           health={enemyHealth} setHealth={setEnemyHealth}
@@ -74,7 +76,8 @@ function App() {
       </div>
 
       <Debug enemies={enemies} activeEnemy={activeEnemy} gold={gold}
-        setGold={setGold} setEnemyHealth={setEnemyHealth} />
+        setGold={setGold} setEnemyHealth={setEnemyHealth}
+        setDamage={setDamage} />
     </>
   );
 }
