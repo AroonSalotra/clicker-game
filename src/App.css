@@ -8,6 +8,8 @@
 
 :root {
   --clr-a: rgb(218, 210, 210);
+
+  --anim-moveY: moveY 2000ms infinite;
 }
 
 body {
@@ -17,7 +19,7 @@ body {
   font-family: Silkscreen;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: gray;
+  background: rgb(65, 71, 82);
   text-align: center;
   padding: 2rem 30vw;
   border-bottom: 2px solid black;
@@ -30,15 +32,12 @@ body {
 
 .header-text {
   /* transform: translateY(1rem); */
-  animation: titleMove 2000ms infinite;
+  /* animation: moveY 2000ms infinite; */
+  animation: var(--anim-moveY);
   /* animation-iteration-count: infinite; */
 }
 
-@keyframes titleMove {
-  0% {transform: translateY(0rem);}
-  50% {transform: translateY(0.2rem);}
-  100% {transform: translateY(0rem);}
-}
+
 
 .App {
   /* text-align: center;
@@ -167,15 +166,26 @@ body {
   font-size: 1.3rem;
 }
 
-
 .enemy {
-  /* margin: auto;
-  height: 20rem;
-  max-width: 30rem;
-  background: rgb(18, 95, 43); */
   font-size: 5rem;
   user-select: none;
   cursor: pointer;
+}
+
+.enemy:active {
+  animation: shake 100ms ;
+}
+
+@keyframes shake {
+  from {
+    transform: translateX(0.5rem);
+    /* color: rgb(117, 117, 117); */
+  }
+
+  to {
+    transform: translateX(0rem);
+    /* color: rgb(204, 195, 195); */
+  }
 }
 
 .slime {
@@ -208,11 +218,22 @@ body {
   /* border: 5px solid hsla(60, 100%, 50%); */
 }
 
-.enemy:active {
-  /* background: rgb(138, 26, 26);
-  transition: background-color 100ms ease; */
-  /* width: 28rem; */
-  /* font-size: 5.2rem; */
+.enemy:active {}
+
+.footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer, ul {
+  /* display: inline; */
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 5rem;
+  background: rgb(148, 75, 75);
+  padding: 3px;
+  color: rgb(7, 7, 7);
 }
 
 .debug {
@@ -225,4 +246,18 @@ body {
 
 .debug-btn {
   height: 3rem;
+}
+
+@keyframes moveY {
+  0% {
+    transform: translateY(0rem);
+  }
+
+  50% {
+    transform: translateY(0.2rem);
+  }
+
+  100% {
+    transform: translateY(0rem);
+  }
 }

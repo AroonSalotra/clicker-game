@@ -10,6 +10,7 @@ import Shop from './Shop';
 import Debug from './Debug';
 import Experience from './Experience';
 import Header from './Header';
+import Footer from './Footer';
 
 function App() {
 
@@ -73,11 +74,14 @@ function App() {
 
         <Shop gold={gold} setGold={setGold}
           damage={damage} setDamage={setDamage} />
+
       </div>
 
       <Debug enemies={enemies} activeEnemy={activeEnemy} gold={gold}
         setGold={setGold} setEnemyHealth={setEnemyHealth}
         setDamage={setDamage} />
+        
+      <Footer />
     </>
   );
 }
