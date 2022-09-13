@@ -75,12 +75,12 @@ function App() {
         <Shop gold={gold} setGold={setGold}
           damage={damage} setDamage={setDamage} />
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
 
-      <Debug enemies={enemies} activeEnemy={activeEnemy} gold={gold}
+      {/* <Debug enemies={enemies} activeEnemy={activeEnemy} gold={gold}
         setGold={setGold} setEnemyHealth={setEnemyHealth}
-        setDamage={setDamage} />
+        setDamage={setDamage} /> */}
 
     </>
   );

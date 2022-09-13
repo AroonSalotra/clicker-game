@@ -304,3 +304,24 @@ body {
     transform: translateY(0rem);
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    /* padding: 2rem 1rem; */
+  }
+}
+
+@media (max-width: 1250px) {
+  body {
+    padding: 2rem 2rem;
+  }
+}
+
+
+@media (max-width: 310px) {
+  .enemy {
+    font-size: 4rem;
+    word-break: break-all;
+    height: 10rem;
+  }
+}
