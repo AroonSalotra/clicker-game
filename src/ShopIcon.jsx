@@ -22,7 +22,8 @@ const ShopIcon = (props) => {
             <button onClick={() => buyItem()} className={`shop-btn ${display}`}>
                 {props.text}</button>
             <p className="price">{price}g</p>
-            <p className="shop-text">{`Lv. ${level}`}</p>
+            {props.level ? <p className="shop-text">{`Lv. ${level}`}</p> : null}
+            {/* <p className="shop-text">{`Lv. ${level}`}</p> */}
         </div>
     );
 }

@@ -5,9 +5,9 @@ const Footer = () => {
                 <a href="#" target={"_blank"}>
                     <li>My Website</li>
                 </a>
-                <a href="#" target={"_blank"}>
+                {/* <a href="#" target={"_blank"}>
                     <li>Art by Beeffan</li>
-                </a>
+                </a> */}
                 <a href="#" target={"_blank"}>
                     <li>Github Repo</li>
                 </a>

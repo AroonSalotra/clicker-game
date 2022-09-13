@@ -18,13 +18,11 @@ const Shop = ({ gold, setGold, damage, setDamage, goldModifier, setGoldModifier 
             <h2>SHOP</h2>
             <p className="gold">{gold}g</p>
             <div className="shop-grid">
-                <ShopIcon text={"DAM+"}
+                <ShopIcon text={"Dam+"} level={true}
                     modifier={damageModifier} setModifier={setDamageModifier}
                     increment={0.3} gold={gold} setGold={setGold} />
 
-                {/* <ShopIcon text={"GOLD+"}
-                    modifier={goldModifier} setModifier={setGoldModifier}
-                    gold={gold} setGold={setGold} /> */}
+                <ShopIcon text={"Skip"} />
 
                 {/* <ShopIcon text={"XP+"}
                     modifier={xpModifier} setModifier={setXpModifier}
