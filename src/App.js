@@ -58,8 +58,8 @@ function App() {
 
   return (
     <>
-      <Header />
       <div className="App">
+      <Header />
         <Tracker
           health={enemyHealth} setHealth={setEnemyHealth}
           damage={damage} setDamage={setDamage}
@@ -75,13 +75,13 @@ function App() {
         <Shop gold={gold} setGold={setGold}
           damage={damage} setDamage={setDamage} />
 
+        <Footer />
       </div>
 
       <Debug enemies={enemies} activeEnemy={activeEnemy} gold={gold}
         setGold={setGold} setEnemyHealth={setEnemyHealth}
         setDamage={setDamage} />
-        
-      <Footer />
+
     </>
   );
 }

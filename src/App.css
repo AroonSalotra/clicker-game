@@ -6,9 +6,13 @@
   box-sizing: border-box;
 }
 
+* {
+  /* background: rgba(0, 0, 255, 0.288); */
+
+}
+
 :root {
   --clr-a: rgb(218, 210, 210);
-
   --anim-moveY: moveY 2000ms infinite;
 }
 
@@ -23,7 +27,6 @@ body {
   text-align: center;
   padding: 2rem 30vw;
   border-bottom: 2px solid black;
-
 }
 
 .header {
@@ -38,26 +41,43 @@ body {
 }
 
 
-
 .App {
   /* text-align: center;
   padding: 2rem; */
   background: rgb(142, 155, 179);
-  border-top: 5px solid black;
+  /* border-top: 5px solid black; */
+  border: 7px solid rgb(37, 36, 36);
+  border-radius: 5px;
 }
 
 .health {
-  height: 3rem;
-  width: 25rem;
-  background: rgb(218, 210, 210);
+  /* height: 3rem; */
+  /* width: 25rem; */
+  /* background: rgb(218, 210, 210); */
   /* margin: auto; */
-  border-radius: 20px;
-  border: 3px solid rgb(114, 15, 15);
+  /* border-radius: 20px; */
+  /* border: 3px solid rgb(114, 15, 15); */
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-size: 3rem;
+  /* color: rgb(105, 14, 14); */
+}
+
+.health-text {
+  /* font-size: 1.8rem; */
+  font-weight: 700;
+}
+
+.icon {
+  font-size: 1.9rem;
+  color: rgb(105, 14, 14);
 }
 
 .level {
   /* background: rgb(218, 210, 210); */
   font-size: 1.5rem;
+  font-weight: 600;
   /* max-width: 30rem; */
   margin: 1rem auto;
 }
@@ -93,9 +113,20 @@ body {
   font-weight: 600;
 }
 
-.health-text {
-  font-size: 1.8rem;
-  font-weight: 700;
+.kills {
+  font-size: 2.7rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.kills-text {
+  
+}
+
+.icon-s {
+  font-size: 2rem;
 }
 
 .wrapper-main {
@@ -105,7 +136,7 @@ body {
 }
 
 .wrapper-shop {
-  background: rgb(133, 143, 170);
+  background: rgb(118, 128, 153);
   margin: 2rem auto;
 }
 
@@ -155,7 +186,7 @@ body {
 }
 
 .bar-content {
-  background: rgb(96, 8, 99);
+  background: rgb(87, 48, 110);
   margin: auto;
   min-width: 3.5rem;
   transition: all 200ms ease-in;
@@ -166,14 +197,28 @@ body {
   font-size: 1.3rem;
 }
 
+.exp-amount {
+  background: rgb(87, 48, 110);
+  width: fit-content;
+  margin: auto;
+  color: white;
+  padding: 0 5px;
+  border-top: 2px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .enemy {
   font-size: 5rem;
   user-select: none;
   cursor: pointer;
+  text-decoration: underline;
 }
 
+.enemy:hover {}
+
 .enemy:active {
-  animation: shake 100ms ;
+  animation: shake 100ms;
 }
 
 @keyframes shake {
@@ -189,36 +234,34 @@ body {
 }
 
 .slime {
-  /* background: hsla(120, 100%, 25%, 0.5); */
   color: hsla(120, 100%, 25%, 0.5);
-  /* border: 5px solid hsl(120, 100%, 25%); */
 }
 
 .treant {
-  /* background: hsla(0, 59%, 41%, 0.5); */
   color: hsla(0, 59%, 41%, 0.5);
-  /* border: 5px solid hsla(0, 59%, 41%); */
 }
 
 .goblin {
-  /* background: hsla(0, 100%, 50%, 0.507); */
   color: hsla(0, 100%, 50%, 0.507);
-  /* border: 5px solid hsla(0, 100%, 50%); */
 }
 
 .hat {
-  /* background: hsla(0, 2%, 20%, 0.418); */
   color: hsla(0, 2%, 20%, 0.418);
-  /* border: 5px solid hsla(0, 2%, 20%, 0.418); */
 }
 
 .broom {
-  /* background: hsla(60, 100%, 50%, 0.507); */
   color: hsla(60, 100%, 50%, 0.507);
-  /* border: 5px solid hsla(60, 100%, 50%); */
 }
 
+.giant {}
+
+.ogre {}
+
 .enemy:active {}
+
+.footer {
+  /* max-width: fit-content; */
+}
 
 .footer a {
   text-decoration: none;
@@ -231,9 +274,9 @@ body {
   justify-content: center;
   list-style: none;
   gap: 5rem;
-  background: rgb(148, 75, 75);
   padding: 3px;
   color: rgb(7, 7, 7);
+  background: rgb(148, 75, 75);
 }
 
 .debug {

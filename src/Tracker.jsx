@@ -1,10 +1,13 @@
+import { BsHeartFill } from "react-icons/bs"
+
 const Tracker = ({ gold, health, goldModifier }) => {
 
     return (
         <>
-            <h2>Health</h2>
+            {/* <h2>Health</h2> */}
             <div className="tracker">
                 <div className="health">
+                    <BsHeartFill className="icon" />
                     <p className="health-text">{health.toFixed()}</p>
                 </div>
                 <div className="wrapper-gold">

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Bar from "./Bar";
+import { GiSkullCrossedBones } from "react-icons/gi"
 
 const Experience = ({ enemies, goldModifier, setGoldModifier, experience, setExperience, kills }) => {
     const [level, setLevel] = useState(1)
@@ -23,8 +24,8 @@ const Experience = ({ enemies, goldModifier, setGoldModifier, experience, setExp
         <>
             <p className="level">Level: {level}</p>
             <Bar completed={expPercent} />
-            <p>{experience} / {expCap}</p>
-            <p>Total Kills: {kills}</p>
+            {/* <p className="exp-amount">{experience} / {expCap}</p> */}
+            <p className="kills"><GiSkullCrossedBones className="icon-s" /> {kills}</p>
         </>
     );
 }

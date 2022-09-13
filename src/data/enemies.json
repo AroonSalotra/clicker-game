@@ -18,5 +18,13 @@
     {
         "name": "broom",
         "health": 45
+    },
+    {
+        "name": "ogre",
+        "health": 100
+    },
+    {
+        "name": "giant",
+        "health": 120
     }
 ]
