@@ -9,6 +9,7 @@ const Tracker = ({ gold, health, goldModifier }) => {
                 <div className="health">
                     <BsHeartFill className="icon" />
                     <p className="health-text">{health.toFixed()}</p>
+                    {/* <p className="health-text">{health}</p> */}
                 </div>
                 <div className="wrapper-gold">
                     {/* <p className="gold">{gold}</p> */}

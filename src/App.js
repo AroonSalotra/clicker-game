@@ -21,7 +21,7 @@ function App() {
   const [goldModifier, setGoldModifier] = useState(0.2)
   const [experience, setExperience] = useState(0)
   const [kills, setKills] = useState(0)
-  const [healthModifier, setHealthModifier] = useState(0)
+  // const [healthModifier, setHealthModifier] = useState(0)
 
   // Attack function
   useEffect(() => {
@@ -40,7 +40,7 @@ function App() {
         setEnemyHealth(health + kills)
         setGold(gold + (Math.round((health / 10) * goldModifier)))
         setExperience(experience + health / 2)
-        console.log(`HP: ${healthModifier}`)
+        // console.log(`HP: ${healthModifier}`)
       }
     }
 
@@ -50,16 +50,34 @@ function App() {
 
   })
 
-  useEffect(() => {
-    if (kills > 9) {
-    }
 
-  }, [kills])
+  // Save component states
+  useEffect(() => {
+    const getKills = window.localStorage.getItem("KILLS")
+    const getGold = window.localStorage.getItem("GOLD")
+    const getGoldMod = window.localStorage.getItem("GOLDMOD")
+    const getDamage = window.localStorage.getItem("DAMAGE")
+
+    const setState = (value, target) => (value > 0 ? target(value) : null)
+
+    setState(getKills, setKills);
+    setState(getGold, setGold);
+    setState(getGoldMod, setGoldModifier)
+    setState(getDamage, setDamage)
+  }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem("KILLS", kills)
+    window.localStorage.setItem("GOLD", gold)
+    window.localStorage.setItem("GOLDMOD", goldModifier)
+    window.localStorage.setItem("DAMAGE", damage)
+  }, [kills, gold, goldModifier, damage])
+
 
   return (
     <>
       <div className="App">
-      <Header />
+        <Header />
         <Tracker
           health={enemyHealth} setHealth={setEnemyHealth}
           damage={damage} setDamage={setDamage}
@@ -78,9 +96,9 @@ function App() {
         <Footer />
       </div>
 
-      <Debug enemies={enemies} activeEnemy={activeEnemy} gold={gold}
+      {/* <Debug enemies={enemies} activeEnemy={activeEnemy} gold={gold}
         setGold={setGold} setEnemyHealth={setEnemyHealth}
-        setDamage={setDamage} />
+        setDamage={setDamage} /> */}
 
     </>
   );

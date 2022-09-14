@@ -4,9 +4,15 @@ const Debug = ({ enemies, setEnemyHealth, setGold, activeEnemy, gold, setDamage 
 
     const [counter, setCounter] = useState(0);
 
-    const ADD = () => setCounter(counter + 1)
+    const [one, setOne] = useState(null)
+    const [two, setTwo] = useState(null)
 
-    const SUB = () => setCounter(counter - 1)
+    const RANDOM = () => {
+        const randomOne = Math.floor(Math.random() * 20)
+        const randomTwo = Math.floor(Math.random() * 20)
+        setOne(randomOne)
+        setTwo(randomTwo)
+    }
 
     const resetGold = () => {
         setEnemyHealth(enemies[activeEnemy].health)
@@ -21,16 +27,25 @@ const Debug = ({ enemies, setEnemyHealth, setGold, activeEnemy, gold, setDamage 
         setDamage(1000)
     }
 
+
+
     // useEffect to GET state
     useEffect(() => {
-        const data = window.localStorage.getItem("COUNT")
-        if (data > 0) setCounter(JSON.parse(data))
+        const getOne = window.localStorage.getItem("ONE")
+        const getTwo = window.localStorage.getItem("TWO")
+
+        const setState = (value, target) => (value > 0 ? target(value) : null)
+
+        setState(getOne, setOne); setState(getTwo, setTwo)
     }, [])
+
 
     // useEffect to SAVE state
     useEffect(() => {
-        window.localStorage.setItem("COUNT", counter)
-    }, [counter])
+        window.localStorage.setItem("ONE", one)
+        window.localStorage.setItem("TWO", two)
+    }, [one, two])
+
 
     return (
         <>
@@ -48,11 +63,15 @@ const Debug = ({ enemies, setEnemyHealth, setGold, activeEnemy, gold, setDamage 
                     Give DMG</button>
             </div>
 
-            <div style={{ display: "flex", justifyContent: "center", gap: "2rem", paddingTop: "1rem" }}>
-                <button onClick={() => SUB()}>SUB</button>
-                <p>{counter}</p>
-                <button onClick={() => ADD()}>ADD</button>
+            <div>
+                <button onClick={() => RANDOM()}>RANDOM</button>
+                <p>{one}</p>
+                <p>{two}</p>
             </div>
+
+            <div>
+            </div>
+
         </>
     );
 }
