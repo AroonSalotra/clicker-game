@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Bar from "./Bar";
 import { GiSkullCrossedBones } from "react-icons/gi"
+import { TbSword } from "react-icons/tb"
 
-const Experience = ({ enemies, goldModifier, setGoldModifier, experience, setExperience, kills }) => {
+const Experience = ({ enemies, goldModifier, setGoldModifier, experience, setExperience, kills, damage }) => {
     const [level, setLevel] = useState(1)
     const [expCap, setExpCap] = useState(99)
     const [expPercent, setExpPercent] = useState(null)
@@ -19,13 +20,12 @@ const Experience = ({ enemies, goldModifier, setGoldModifier, experience, setExp
         }
     }, [experience])
 
-      // useEffect to GET state
-      useEffect(() => {
+    // Save Level State
+    useEffect(() => {
         const data = window.localStorage.getItem("LEVEL")
         if (data > 1) setLevel(JSON.parse(data))
     }, [])
 
-    // useEffect to SAVE state
     useEffect(() => {
         window.localStorage.setItem("LEVEL", JSON.stringify(level))
     }, [level])
@@ -36,7 +36,10 @@ const Experience = ({ enemies, goldModifier, setGoldModifier, experience, setExp
             <p className="level">Level: {level}</p>
             <Bar completed={expPercent} />
             {/* <p className="exp-amount">{experience} / {expCap}</p> */}
-            <p className="kills"><GiSkullCrossedBones className="icon-s" /> {kills}</p>
+            <div className="stats">
+                <p className="kills"><GiSkullCrossedBones className="icon-s" />{kills}</p>
+                <p className="damage"><TbSword className="icon-s" />{damage}</p>
+            </div>
         </>
     );
 }

@@ -54,23 +54,24 @@ function App() {
   // Save component states
   useEffect(() => {
     const getKills = window.localStorage.getItem("KILLS")
-    const getGold = window.localStorage.getItem("GOLD")
+    // const getGold = window.localStorage.getItem("GOLD")
     const getGoldMod = window.localStorage.getItem("GOLDMOD")
-    const getDamage = window.localStorage.getItem("DAMAGE")
+    // const getDamage = window.localStorage.getItem("DAMAGE")
 
-    const setState = (value, target) => (value > 0 ? target(value) : null)
+    const setState = (value, target) => value > 0 ? target(JSON.parse(value)) : null
+    
 
     setState(getKills, setKills);
-    setState(getGold, setGold);
+    // setState(getGold, setGold);
     setState(getGoldMod, setGoldModifier)
-    setState(getDamage, setDamage)
+    // setState(getDamage, setDamage)
   }, [])
 
   useEffect(() => {
     window.localStorage.setItem("KILLS", kills)
-    window.localStorage.setItem("GOLD", gold)
+    // window.localStorage.setItem("GOLD", gold)
     window.localStorage.setItem("GOLDMOD", goldModifier)
-    window.localStorage.setItem("DAMAGE", damage)
+    // window.localStorage.setItem("DAMAGE", damage)
   }, [kills, gold, goldModifier, damage])
 
 
@@ -88,7 +89,7 @@ function App() {
         <Experience
           goldModifier={goldModifier} setGoldModifier={setGoldModifier}
           experience={experience} setExperience={setExperience}
-          kills={kills} />
+          kills={kills} damage={damage} />
 
         <Shop gold={gold} setGold={setGold}
           damage={damage} setDamage={setDamage} />

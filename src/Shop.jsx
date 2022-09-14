@@ -10,8 +10,17 @@ const Shop = ({ gold, setGold, damage, setDamage, goldModifier, setGoldModifier 
     console.log(`MODIFIERS: DMG: ${damageModifier} GOLD: ${goldModifier} XP: ${xpModifier}`)
 
     useEffect(() => {
-        setDamage(damage * damageModifier)
+        setDamage(Math.floor(damage * damageModifier))
     }, [damageModifier])
+
+    // useEffect(() => {
+    //     const data = window.localStorage.getItem("DAMAGE")
+    //     if (data > 8) setDamage(JSON.parse(data))
+    // }, [])
+
+    // useEffect(() => {
+    //     window.localStorage.setItem("DAMAGE", damage)
+    // }, [damage])
 
     return (
         <div className="wrapper-shop">

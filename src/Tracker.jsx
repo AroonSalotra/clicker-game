@@ -8,7 +8,8 @@ const Tracker = ({ gold, health, goldModifier }) => {
             <div className="tracker">
                 <div className="health">
                     <BsHeartFill className="icon" />
-                    <p className="health-text">{health.toFixed()}</p>
+                    {/* <p className="health-text">{health.toFixed()}</p> */}
+                    <p className="health-text">{Math.floor(health)}</p>
                     {/* <p className="health-text">{health}</p> */}
                 </div>
                 <div className="wrapper-gold">
