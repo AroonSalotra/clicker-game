@@ -15,7 +15,7 @@ const Shop = ({ gold, setGold, damage, setDamage, goldModifier, setGoldModifier 
 
     // useEffect(() => {
     //     const data = window.localStorage.getItem("DAMAGE")
-    //     if (data > 8) setDamage(JSON.parse(data))
+    //     if (data > 15) setDamage(JSON.parse(data))
     // }, [])
 
     // useEffect(() => {
@@ -31,7 +31,7 @@ const Shop = ({ gold, setGold, damage, setDamage, goldModifier, setGoldModifier 
                     modifier={damageModifier} setModifier={setDamageModifier}
                     increment={0.3} gold={gold} setGold={setGold} />
 
-                <ShopIcon text={"Skip"} />
+                {/* <ShopIcon text={"Skip"} /> */}
 
                 {/* <ShopIcon text={"XP+"}
                     modifier={xpModifier} setModifier={setXpModifier}

@@ -11,6 +11,7 @@ import Debug from './Debug';
 import Experience from './Experience';
 import Header from './Header';
 import Footer from './Footer';
+import Background from './Background';
 
 function App() {
 
@@ -56,32 +57,34 @@ function App() {
     const getKills = window.localStorage.getItem("KILLS")
     // const getGold = window.localStorage.getItem("GOLD")
     const getGoldMod = window.localStorage.getItem("GOLDMOD")
-    // const getDamage = window.localStorage.getItem("DAMAGE")
+    const getExperience = window.localStorage.getItem("EXP")
 
-    const setState = (value, target) => value > 0 ? target(JSON.parse(value)) : null
-    
+    const setState = (value, target, amount) =>
+      value > (amount ? amount : 1) ? target(JSON.parse(value)) : null
 
-    setState(getKills, setKills);
+
+    setState(getKills, setKills, 1);
     // setState(getGold, setGold);
     setState(getGoldMod, setGoldModifier)
-    // setState(getDamage, setDamage)
+    setState(getExperience, setExperience)
   }, [])
 
   useEffect(() => {
     window.localStorage.setItem("KILLS", kills)
     // window.localStorage.setItem("GOLD", gold)
     window.localStorage.setItem("GOLDMOD", goldModifier)
-    // window.localStorage.setItem("DAMAGE", damage)
-  }, [kills, gold, goldModifier, damage])
+    window.localStorage.setItem("EXP", experience)
+  }, [kills, gold, goldModifier, damage, experience])
 
 
   return (
     <>
+      <Background imgUrl={"https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148384633.jpg?t=st=1663150426~exp=1663151026~hmac=17b4ecb9f621be86314daa9b4e0ccefad97891be63ee0a0d79724190f1c0aab7"} />
+
       <div className="App">
         <Header />
         <Tracker
           health={enemyHealth} setHealth={setEnemyHealth}
-          damage={damage} setDamage={setDamage}
           gold={gold} goldModifier={goldModifier} />
 
         <Enemy enemies={enemies} activeEnemy={activeEnemy} />

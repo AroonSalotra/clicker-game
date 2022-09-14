@@ -22,20 +22,26 @@ const Experience = ({ enemies, goldModifier, setGoldModifier, experience, setExp
 
     // Save Level State
     useEffect(() => {
-        const data = window.localStorage.getItem("LEVEL")
-        if (data > 1) setLevel(JSON.parse(data))
+        const setState = (value, target, amount) => value > amount ? target(JSON.parse(value)) : null
+        const getLevel = window.localStorage.getItem("LEVEL")
+        const getExpCap = window.localStorage.getItem("EXP-CAP")
+
+        // if (data > 1) setLevel(JSON.parse(data))
+        setState(getLevel, setLevel, 1)
+        setState(getExpCap, setExpCap, 99)
     }, [])
 
     useEffect(() => {
         window.localStorage.setItem("LEVEL", JSON.stringify(level))
-    }, [level])
+        window.localStorage.setItem("EXP-CAP", JSON.stringify(expCap))
+    }, [level, expCap])
 
 
     return (
         <>
             <p className="level">Level: {level}</p>
             <Bar completed={expPercent} />
-            {/* <p className="exp-amount">{experience} / {expCap}</p> */}
+            <p className="exp-amount">{experience} / {expCap}</p>
             <div className="stats">
                 <p className="kills"><GiSkullCrossedBones className="icon-s" />{kills}</p>
                 <p className="damage"><TbSword className="icon-s" />{damage}</p>
