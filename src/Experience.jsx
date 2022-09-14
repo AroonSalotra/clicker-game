@@ -19,6 +19,17 @@ const Experience = ({ enemies, goldModifier, setGoldModifier, experience, setExp
         }
     }, [experience])
 
+      // useEffect to GET state
+      useEffect(() => {
+        const data = window.localStorage.getItem("LEVEL")
+        if (data > 1) setLevel(JSON.parse(data))
+    }, [])
+
+    // useEffect to SAVE state
+    useEffect(() => {
+        window.localStorage.setItem("LEVEL", JSON.stringify(level))
+    }, [level])
+
 
     return (
         <>
